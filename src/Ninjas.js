@@ -1,14 +1,19 @@
-import React, { Component } from "react";
+const Ninjas = ({ ninjas }) => {
+  const ninjasList = ninjas.map((ninja) => {
+    return ninja.age > 20 ? (
+      <div className="ninjas" key={ninja.id}>
+        <div>Name: {ninja.name}</div>
+        <div>Age: {ninja.age}</div>
+        <div>Belt: {ninja.belt}</div>
+      </div>
+    ) : null;
+  });
 
-function Ninjas(props) {
-  const { name, age, belt } = props;
   return (
-    <div className="ninjias">
-      <div>Name: { name }</div>
-      <div>Age: { age }</div>
-      <div>Belt: { belt }</div>
+    <div className="ninja-list">
+      {ninjasList}
     </div>
-  );
+  )
 }
 
 export default Ninjas;
